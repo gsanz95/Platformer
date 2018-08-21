@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
-// A behaviour that is attached to a playable
+[CreateAssetMenu (menuName= "Abilities/JumpAbility")]
 public class JumpAbility : PlayerAbility
 {
 	public float jumpForce = 2f;
@@ -15,17 +14,15 @@ public class JumpAbility : PlayerAbility
 
 	public override void TriggerAbility() {
 		Debug.Log("Jumping!");
-
 		// Upward force
-		if(Input.GetButtonDown("Jump")) {
-			objectRigidbody.velocity = Vector2.up * jumpForce;
-		}
+		objectRigidbody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+		//objectRigidbody.MovePosition(objectRigidbody.position + (new Vector2(jumpForce, 0)) * Time.deltaTime);
 		
 		// Downward force
-		if(objectRigidbody.velocity.y < 0){
-			objectRigidbody.velocity += Vector2.up * Physics2D.gravity.y * (fallForceMax - 1) * Time.deltaTime;
-		} else if(objectRigidbody.velocity.y > 0 && !Input.GetButton ("Jump")) {
-			objectRigidbody.velocity += Vector2.up * Physics2D.gravity.y * (fallForceMin - 1) * Time.deltaTime;
+		if(objectRigidbody.transform.position.y < -5){
+			objectRigidbody.gravityScale = fallForceMax;
+		} else if(objectRigidbody.transform.position.y < -6 && !Input.GetButton ("Jump")) {
+			objectRigidbody.gravityScale = fallForceMin;
 		}
 	}
 }
