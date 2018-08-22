@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu (menuName= "Abilities/JumpAbility")]
+//[CreateAssetMenu (menuName= "Abilities/JumpAbility")]
 public class JumpAbility : PlayerAbility
 {
 	public float jumpForce = 2f;
@@ -13,10 +13,10 @@ public class JumpAbility : PlayerAbility
 	}
 
 	public override void TriggerAbility() {
-		Debug.Log("Jumping!");
+		Debug.Log("Jumping velocity: " + objectRigidbody.velocity);
 		// Upward force
-		objectRigidbody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-		//objectRigidbody.MovePosition(objectRigidbody.position + (new Vector2(jumpForce, 0)) * Time.deltaTime);
+		//objectRigidbody.MovePosition(Vector2.MoveTowards(objectRigidbody.position, objectRigidbody.position + (new Vector2(0, jumpForce)), .125f));
+		objectRigidbody.MovePosition(objectRigidbody.position + Vector2.up * Time.fixedDeltaTime * jumpForce);
 		
 		// Downward force
 		if(objectRigidbody.transform.position.y < -5){

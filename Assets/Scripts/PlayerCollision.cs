@@ -9,6 +9,7 @@ public class PlayerCollision : MonoBehaviour {
 		{
 			Debug.Log("Collided with ground!");
 			movement.isOnGround = true;
+			movement.isJumping = false;
 		}
 	}
 

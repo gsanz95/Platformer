@@ -2236,6 +2236,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+  - first: {x: -15, y: -9, z: 0}
+    second:
+      m_TileIndex: 28
+      m_TileSpriteIndex: 28
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
   - first: {x: -13, y: -9, z: 0}
     second:
       m_TileIndex: 18
@@ -3410,7 +3419,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 29f5baa0ec28caa4ab5bf0350c2dd556, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 0aa75142dca5855429d7edf2c01d44da, type: 2}
-  - m_RefCount: 23
+  - m_RefCount: 24
     m_Data: {fileID: 11400000, guid: 6d2a464ed4e174d4b8ceb0e10570a272, type: 2}
   - m_RefCount: 12
     m_Data: {fileID: 11400000, guid: 69cfdbec33b4e2e43bda0e9b84614ae1, type: 2}
@@ -3511,7 +3520,7 @@ Tilemap:
     m_Data: {fileID: 21300182, guid: 261212b977f594d5dbc48631a5c1295c, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300198, guid: 261212b977f594d5dbc48631a5c1295c, type: 3}
-  - m_RefCount: 23
+  - m_RefCount: 24
     m_Data: {fileID: 21300124, guid: 261212b977f594d5dbc48631a5c1295c, type: 3}
   - m_RefCount: 12
     m_Data: {fileID: 21300096, guid: 261212b977f594d5dbc48631a5c1295c, type: 3}
@@ -3556,7 +3565,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 21300074, guid: 261212b977f594d5dbc48631a5c1295c, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 264
+  - m_RefCount: 265
     m_Data:
       e00: 1
       e01: 0
@@ -3575,7 +3584,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 264
+  - m_RefCount: 265
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4008,8 +4017,16 @@ CompositeCollider2D:
         Y: -70000000
       - X: -130000000
         Y: -90000000
-      - X: -150000000
+      - X: -141250000
         Y: -90000000
+      - X: -140000000
+        Y: -89375000
+      - X: -140000000
+        Y: -80000000
+      - X: -148750000
+        Y: -80000000
+      - X: -150000000
+        Y: -81250000
       - X: -150000000
         Y: -70000000
       - X: -151250000
@@ -4280,17 +4297,23 @@ CompositeCollider2D:
         Y: -80000000
       - X: -51250000
         Y: -80000000
-    - - X: -60000000
-        Y: -100000000
-      - X: -60000000
-        Y: -99375000
-      - X: -59375000
-        Y: -100000000
+    - - X: -150000000
+        Y: -90000000
+      - X: -150000000
+        Y: -88125000
+      - X: -148124992
+        Y: -90000000
     - - X: -80000000
         Y: -100000000
       - X: -80000000
         Y: -99375000
       - X: -79375000
+        Y: -100000000
+    - - X: -60000000
+        Y: -100000000
+      - X: -60000000
+        Y: -99375000
+      - X: -59375000
         Y: -100000000
     - - X: 50000000
         Y: -118125000
@@ -4496,7 +4519,11 @@ CompositeCollider2D:
       - {x: -12.875, y: -7}
       - {x: -13, y: -7}
       - {x: -13, y: -9}
-      - {x: -15, y: -9}
+      - {x: -14.125, y: -9}
+      - {x: -14, y: -8.9375}
+      - {x: -14, y: -8}
+      - {x: -14.875, y: -8}
+      - {x: -15, y: -8.125}
       - {x: -15, y: -7}
       - {x: -15.125, y: -7}
       - {x: -16, y: -7.875}
@@ -4632,12 +4659,15 @@ CompositeCollider2D:
       - {x: -8, y: -7}
       - {x: -8, y: -8}
       - {x: -5.125, y: -8}
-    - - {x: -6, y: -10}
-      - {x: -6, y: -9.9375}
-      - {x: -5.9375, y: -10}
+    - - {x: -15, y: -9}
+      - {x: -15, y: -8.8125}
+      - {x: -14.812499, y: -9}
     - - {x: -8, y: -10}
       - {x: -8, y: -9.9375}
       - {x: -7.9375, y: -10}
+    - - {x: -6, y: -10}
+      - {x: -6, y: -9.9375}
+      - {x: -5.9375, y: -10}
     - - {x: 5, y: -11.8125}
       - {x: 5.1875, y: -12}
       - {x: 5.125, y: -12}
@@ -5230,11 +5260,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1710289774}
   - component: {fileID: 1710289773}
-  - component: {fileID: 1710289772}
   - component: {fileID: 1710289775}
   - component: {fileID: 1710289777}
   - component: {fileID: 1710289776}
   - component: {fileID: 1710289778}
+  - component: {fileID: 1710289772}
+  - component: {fileID: 1710289779}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -5254,9 +5285,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOnGround: 0
-  movementSpeed: 2.39
+  isJumping: 0
+  movementSpeed: 1
+  maxJumpHeight: 10
+  fallGravity: 2.5
   playerRigidbody: {fileID: 1710289775}
-  jumpAbility: {fileID: 11400000, guid: ec7d006f8897b1f4c8767e4252087cd2, type: 2}
 --- !u!212 &1710289773
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5388,6 +5421,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 1710289772}
+--- !u!114 &1710289779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1710289771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2599995e149d0de4a960c0823efd2340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1867973307
 GameObject:
   m_ObjectHideFlags: 0
