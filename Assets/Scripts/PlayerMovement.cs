@@ -6,6 +6,8 @@ public class PlayerMovement : MonoBehaviour {
 	
 	[HideInInspector]public bool isOnGround = false;
 	[HideInInspector]public bool isJumping = false;
+	[HideInInspector]public bool isLookingRight = true;
+	public Animator playerAnimator;
 	public float movementSpeed = 1f;
 	public float maxJumpHeight = 10f;
 	public float fallGravity = 2.5f;
@@ -28,6 +30,7 @@ public class PlayerMovement : MonoBehaviour {
 		updateVertical();
 
 		deltaPosition.Set(deltaPositionX, deltaPositionY);
+		playerAnimator.SetFloat("Player_Speed", Mathf.Abs(deltaPositionX));
 
 		//Debug.Log(updatedPosition);
 		playerRigidbody.transform.position = (playerRigidbody.position + deltaPosition);
@@ -35,6 +38,16 @@ public class PlayerMovement : MonoBehaviour {
 
 	void updatedHorizontal() {
 		deltaPositionX = Input.GetAxis("Horizontal") * movementSpeed;
+
+		if(deltaPositionX > 0 && isLookingRight != false){
+			playerRigidbody.transform.Rotate(0,180f,0);
+			isLookingRight = false;
+		}
+		if(deltaPositionX < 0 && isLookingRight != true){
+			playerRigidbody.transform.Rotate(0,180f,0);
+			isLookingRight = true;
+		}
+
 		deltaPositionX = Mathf.MoveTowards(0f, deltaPositionX, movementSpeed);
 		deltaPositionX *= Time.deltaTime;
 	}
